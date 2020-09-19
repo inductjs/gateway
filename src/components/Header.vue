@@ -4,7 +4,7 @@
       class="flex items-center justify-between w-screen flex-wrap bg-gray-900 p-6"
     >
       <div class="flex items-center flex-shrink-0 text-white mr-6">
-        <span class="font-semibold text-xl tracking-tight">Induct</span>
+        <span class="font-semibold text-xl tracking-tight">INDUCT</span>
       </div>
       <div class="block lg:hidden">
         <button
@@ -23,22 +23,11 @@
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
           <a
-            href="#responsive-header"
+            target="_blank"
+            href="https://github.com/Yeseh/induct-core"
             class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
           >
-            Docs
-          </a>
-          <a
-            href="#responsive-header"
-            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-          >
-            Examples
-          </a>
-          <a
-            href="#responsive-header"
-            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
-          >
-            Blog
+            Core
           </a>
         </div>
       </div>

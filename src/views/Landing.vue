@@ -2,6 +2,7 @@
   <div class="container text-white">
     <Header />
     <DashboardMenu />
+    <ApplicationBox />
   </div>
 </template>
 
@@ -9,11 +10,13 @@
 import { defineComponent } from "vue";
 import DashboardMenu from "../components/DashboardMenu.vue";
 import Header from "../components/Header.vue";
+import ApplicationBox from "../components/ApplicationBox.vue";
 
 export default defineComponent({
   components: {
     DashboardMenu,
-    Header
+    Header,
+    ApplicationBox
   },
 
   data() {
@@ -24,10 +27,4 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-.landing-page-wrapper {
-  background-color: rgb(46, 47, 50);
-  width: 100%;
-  height: 100vh;
-}
-</style>
+<style scoped></style>
