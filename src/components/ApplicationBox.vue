@@ -22,7 +22,6 @@
 <script setup lang="ts">
 import ApplicationCard from "./ApplicationCard.vue";
 import {useAppStore} from "../store";
-import {onMounted} from "vue";
 
 export default {
     name: "ApplicationBox",
@@ -30,10 +29,6 @@ export default {
         ApplicationCard,
     },
 };
-
-onMounted(() => {
-    console.log("hello");
-});
 
 const appStore = useAppStore();
 const apps = appStore.apps;

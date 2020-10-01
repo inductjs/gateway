@@ -12,28 +12,24 @@
     </button>
 </template>
 
-<script setup lang="ts">
+<script setup="props" lang="ts">
 import {useAppStore} from "@/store";
+import {TileButton} from "@/types/application";
 
 declare const props: {
-    tile: {name: string; path: string; icon: string};
+    tile: TileButton;
 };
 
-const appStore = useAppStore();
+const {STORE_APP, appCount} = useAppStore();
 
 function addTile() {
-    appStore.STORE_APP({
-        address: `localhost:${3000 + appStore.appCount}/api`,
+    STORE_APP({
+        address: `localhost:${3000 + appCount}/api`,
         isRunning: true,
     });
 }
 
 export {addTile};
-
-export default {
-    name: "TileButton",
-    props: ["tile"],
-};
 </script>
 
 <style scoped></style>
