@@ -1,1 +1,1 @@
-export {store as appStore} from "./store/main";
+export {store as useAppStore} from "./store/application";

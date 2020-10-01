@@ -1,24 +1,12 @@
 <template>
     <div class="bg-gray-800 min-w-screen min-h-screen text-white" id="app">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <h1 class="text-white"></h1>
         <router-view />
     </div>
 </template>
 
-<script setup lang="ts">
-// background: rgb(46, 47, 50);
-// foreground1: rgb(25,28,32);
-// foreground2: rgb(0,0,0);
-import {appStore} from "./store";
-
-export appStore.
-
-
-
-</script>
-
-<style>
+<script setup lang="ts"></script>
+<style scoped>
 * {
     box-sizing: border-box;
     margin: 0;

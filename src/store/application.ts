@@ -28,7 +28,16 @@ export const store = defineStore<string, State, Getters, Actions>({
     id: "application",
     state: () => ({
         apiBaseUrl: getReqNamespace("app"),
-        apps: [],
+        apps: [
+            {
+                address: "localhost:3000/api",
+                isRunning: true,
+            },
+            {
+                address: "localhost:3001/api",
+                isRunning: false,
+            },
+        ],
     }),
     getters: {
         appCount() {
