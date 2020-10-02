@@ -1,13 +1,12 @@
 import {defineStore} from "pinia";
 import {InductGeneratorConfig} from "@yeseh/induct-generator-server/src/types/generator-config";
 import {Application} from "../types/application";
-import {getReqNamespace} from "../environment";
+import {buildReqUrl} from "../environment";
 import axios from "axios";
 
 const {get, post} = axios;
 
 export interface State {
-    apiBaseUrl: string;
     apps: Application[];
 }
 
@@ -27,7 +26,6 @@ export interface Actions {
 export const store = defineStore<string, State, Getters, Actions>({
     id: "application",
     state: () => ({
-        apiBaseUrl: getReqNamespace("app"),
         apps: [
             {
                 address: "localhost:3000/api",
@@ -59,13 +57,15 @@ export const store = defineStore<string, State, Getters, Actions>({
         },
 
         async createApp(conf: InductGeneratorConfig) {
-            const result = await post<Application>(this.apiBaseUrl, conf);
+            const result = await post<Application>(buildReqUrl("app"), conf);
 
             return result.data;
         },
 
         async fetchApplications() {
-            const result = await get<Application[]>(this.apiBaseUrl);
+            const url = buildReqUrl("app");
+
+            const result = await get<Application[]>(url);
 
             this.STORE_APP(result.data);
 
