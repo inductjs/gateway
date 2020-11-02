@@ -1,5 +1,5 @@
 import {defineStore} from "pinia";
-import {InductGeneratorConfig} from "@yeseh/induct-generator-server/src/types/generator-config";
+// import {InductGeneratorConfig} from "@yeseh/induct-generator-server/src/types/generator-config";
 import {Application} from "../types/application";
 import {buildReqUrl} from "../environment";
 import axios from "axios";
@@ -19,7 +19,7 @@ export interface Getters {
 export interface Actions {
     /** Append one Application, or an array of applications to the stored apps */
     STORE_APP: (app: Application | Application[]) => void;
-    createApp: (conf: InductGeneratorConfig) => Promise<Application>;
+    // createApp: (conf: InductGeneratorConfig) => Promise<Application>;
     fetchApplications: () => Promise<Application[]>;
 }
 
@@ -56,11 +56,11 @@ export const store = defineStore<string, State, Getters, Actions>({
             else this.apps.push(app);
         },
 
-        async createApp(conf: InductGeneratorConfig) {
-            const result = await post<Application>(buildReqUrl("app"), conf);
+        // async createApp(conf: InductGeneratorConfig) {
+        //     const result = await post<Application>(buildReqUrl("app"), conf);
 
-            return result.data;
-        },
+        //     return result.data;
+        // },
 
         async fetchApplications() {
             const url = buildReqUrl("app");
